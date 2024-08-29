@@ -1,0 +1,65 @@
+body {
+  background-color: #f8f9fa;
+}
+
+/* RTL specific styles */
+:dir(rtl) {
+  text-align: right;
+}
+
+:dir(rtl) .container {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+:dir(rtl) .left-aligned {
+  text-align: left;
+}
+
+.main-section {
+  padding: 2rem;
+}
+.about-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+}
+.toast-container {
+  top: 1rem;
+  right: 1rem;
+}
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Custom Styles */
+.form-group {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 15px; /* Add padding */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 15px; /* Space between form fields */
+}
+
+.form-label {
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Make the label text bold */
+}
+
+.form-control {
+  border-radius: 5px; /* Match input field's corners with the label's */
+}
+
+.form-check-input {
+  margin-right: 10px; /* Space between checkbox and label */
+}
+
+.header-img {
+  width: 80%;
+}

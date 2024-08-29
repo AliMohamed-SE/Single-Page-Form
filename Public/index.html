@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نموذج التسجيل</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- jQuery (needed for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS with Popper.js (optional, for components like dropdowns, modals, tooltips) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include js-cookie library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+    <!-- Include EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <!-- Include a link to your CSS file -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <section
+        class="main-section d-flex justify-content-center align-items-center"
+      >
+        <div class="about-container text-start">
+          <div class="d-flex align-items-center justify-content-center mb-5">
+            <img src="./Header.png" class="header-img" />
+          </div>
+
+          <h2 class="mb-4">
+            يسر جامعة الأمير مقرن بن عبدالعزيز أن تقدم دبلومات مهنية مكثفة (عن
+            بعد) لمدة ( سنة دراسية ) لعدد 60 ساعة أكاديمية
+          </h2>
+          <form class="row g-3" id="contactForm">
+            <div class="form-group bg-light p-3 mb-3">
+              <label for="FullName" class="form-label">الأسم الرباعي</label>
+              <input
+                type="text"
+                class="form-control"
+                id="FullName"
+                name="FullName"
+                required
+              />
+            </div>
+            <div class="form-group bg-light p-3 mb-3">
+              <label for="id_number" class="form-label">رقم الهوية</label>
+              <input
+                type="text"
+                class="form-control"
+                id="id_number"
+                name="id_number"
+                required
+              />
+            </div>
+            <div class="form-group bg-light p-3 mb-3">
+              <label for="phone_number" class="form-label">رقم الجوال</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phone_number"
+                name="phone_number"
+                required
+              />
+            </div>
+            <!-- Gender -->
+            <div class="col-md-6 form-group">
+              <label class="form-label">الجنس :</label>
+              <div>
+                <input
+                  type="radio"
+                  id="genderMale"
+                  name="gender"
+                  value="ذكر"
+                  required
+                />
+                <label for="genderMale" class="form-label">ذكر</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="genderFemale"
+                  name="gender"
+                  value="أنثى"
+                  required
+                />
+                <label for="genderFemale" class="form-label">أنثى</label>
+              </div>
+            </div>
+
+            <!-- Training Coordinator -->
+            <div class="col-md-6 form-group">
+              <label class="form-label"
+                >اختر المنسق التدريبي للتنسيق وكود الخصم :</label
+              >
+              <div>
+                <input
+                  type="radio"
+                  id="coordinatorCoordinator1"
+                  name="training_coordinator"
+                  value="عبدالله ال قماش . H1"
+                  required
+                />
+                <label for="coordinatorCoordinator1" class="form-label"
+                  >عبدالله ال قماش . H1</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="coordinatorCoordinator2"
+                  name="training_coordinator"
+                  value="عبدالرحمن ال عامر . H"
+                  required
+                />
+                <label for="coordinatorCoordinator2" class="form-label"
+                  >عبدالرحمن ال عامر . H</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="coordinatorCoordinator3"
+                  name="training_coordinator"
+                  value="سعيد ال منصور . H1"
+                  required
+                />
+                <label for="coordinatorCoordinator3" class="form-label"
+                  >سعيد ال منصور . H1</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="coordinatorCoordinator4"
+                  name="training_coordinator"
+                  value="سحر القحطاني . H1"
+                  required
+                />
+                <label for="coordinatorCoordinator4" class="form-label"
+                  >سحر القحطاني . H1</label
+                >
+              </div>
+            </div>
+            <!-- Diploma Name -->
+            <div class="col-md-6 form-group">
+              <label class="form-label">اسم الدبلوم المراد الالتحاق به :</label>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma1"
+                  name="diploma_name"
+                  value="دبلوم الموارد البشرية"
+                  required
+                />
+                <label for="diplomaDiploma1" class="form-label"
+                  >دبلوم الموارد البشرية</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma2"
+                  name="diploma_name"
+                  value="دبلوم إدارة الأعمال"
+                  required
+                />
+                <label for="diplomaDiploma2" class="form-label"
+                  >دبلوم إدارة الأعمال</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma3"
+                  name="diploma_name"
+                  value="دبلوم الحاسب الآلي"
+                  required
+                />
+                <label for="diplomaDiploma3" class="form-label"
+                  >دبلوم الحاسب الآلي</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma4"
+                  name="diploma_name"
+                  value="دبلوم الإدارة المكتبية"
+                  required
+                />
+                <label for="diplomaDiploma4" class="form-label"
+                  >دبلوم الإدارة المكتبية</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma5"
+                  name="diploma_name"
+                  value="دبلوم الأمن السيبراني"
+                  required
+                />
+                <label for="diplomaDiploma5" class="form-label"
+                  >دبلوم الأمن السيبراني</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma6"
+                  name="diploma_name"
+                  value="دبلوم السلامة والصحة المهنية"
+                  required
+                />
+                <label for="diplomaDiploma6" class="form-label"
+                  >دبلوم السلامة والصحة المهنية</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma7"
+                  name="diploma_name"
+                  value="دبلوم الإدارة التنفيذية"
+                  required
+                />
+                <label for="diplomaDiploma7" class="form-label"
+                  >دبلوم الإدارة التنفيذية</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma8"
+                  name="diploma_name"
+                  value="دبلوم إدارة المستشفيات"
+                  required
+                />
+                <label for="diplomaDiploma8" class="form-label"
+                  >دبلوم إدارة المستشفيات</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma9"
+                  name="diploma_name"
+                  value="دبلوم القانون"
+                  required
+                />
+                <label for="diplomaDiploma9" class="form-label"
+                  >دبلوم القانون</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="diplomaDiploma10"
+                  name="diploma_name"
+                  value="دبلوم المحاسبة والإدارة المالية"
+                  required
+                />
+                <label for="diplomaDiploma10" class="form-label"
+                  >دبلوم المحاسبة والإدارة المالية</label
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 form-group">
+                أرقام منسقي التدريب للاستفسارات :
+                <ul>
+                  <li>0543000160 - عبدالله ال قماش , منسق تدريب</li>
+                  <li>0564483727 - عبدالرحمن ال عامر , منسق تدريب</li>
+                  <li>0544116006 - سعيد ال منصور</li>
+                  <li>0594184545 - سحر القحطاني , منسق تدريب</li>
+                </ul>
+              </div>
+              <div class="col-md-5 form-group">
+                طريقة السداد :
+                <ul>
+                  <li>
+                    تحويل بنكي على حساب الغرفة التجارية بأبها فقط ولا تتحمل
+                    الغرفة التجارية بأبها أو الجامعة اي مسؤولية في حال التحويل
+                    لحساب اخر .
+                  </li>
+                  <li>
+                    رقم حساب الغرفة التجارية بأبها : SA2880000542608016066669
+                  </li>
+                  <li>
+                    عند التحويل يجب إرفاق صورة الحوالة او ارسال الحوالة على احد
+                    الارقام المدرجة أعلاه
+                  </li>
+                  <li>
+                    رسوم 200 ريال ( غير مستردة ) لإصدار مشهد قبول للجهات الأمنية
+                    تخصم من القيمة الإجمالية
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-3 form-group">
+                تواريخ تهمك :
+                <ul>
+                  <li>تاريخ بداية التسجل : 1446/02/16هـ</li>
+                  <li>تاريخ بداية الدبلومات : 1446/05/01هـ</li>
+                  <li>تاريخ نهاية التسجيل : 1446/05/05هـ</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Agreement Checkbox -->
+            <div class="col-12 form-group">
+              <div class="form-check" style="display: flex; margin-top: 10px">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="agree"
+                  required
+                  style="padding-right: 10px; margin-left: 10px"
+                />
+                <label class="form-check-label" for="agree" style="color: #333">
+                  قر انا المتدرب ان جميع البيانات المذكورة صحيحة واني اتحمل كافة
+                  الامور المترتبة على ذلك بالإضافة الى اني اتعهد بعدم طلب
+                  استرجاع اي رسوم يتم دفعها قبل بدء الدبلومات بأسبوع , وفي حين
+                  تجاوزت نسبة الغياب 25% يتم الإقصاء من الدبلوم :
+                </label>
+              </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+              <img src="./Bank Info.png" class="w-75" />
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <!-- Toast Notification -->
+          <div
+            class="toast-container position-fixed bottom-0 end-0 p-3"
+            style="z-index: 11"
+          >
+            <div
+              id="thankYouToast"
+              class="toast"
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+            >
+              <div class="toast-header">
+                <strong class="me-auto">Message Sent!</strong>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="toast"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="toast-body">Thank you for contacting us!</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9a9d1d09d3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
